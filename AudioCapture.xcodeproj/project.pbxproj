@@ -42,7 +42,36 @@
 		F0A0AC962F628C42009A449C /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC952F628C42009A449C /* AppCoordinator.swift */; };
 		F0A0AC9A2F628D31009A449C /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC992F628D31009A449C /* SharedDefaults.swift */; };
 		F0A0AC9B2F628D31009A449C /* RecordingActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC982F628D31009A449C /* RecordingActivityAttributes.swift */; };
+		F0A0ACBC2F628DBF009A449C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A0ACBB2F628DBF009A449C /* WidgetKit.framework */; };
+		F0A0ACBE2F628DBF009A449C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A0ACBD2F628DBF009A449C /* SwiftUI.framework */; };
+		F0A0ACCD2F628DC0009A449C /* AudioCaptureWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F0A0ACB92F628DBF009A449C /* AudioCaptureWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F0A0ACD32F6291AE009A449C /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC992F628D31009A449C /* SharedDefaults.swift */; };
+		F0A0ACD42F6291B2009A449C /* RecordingActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC982F628D31009A449C /* RecordingActivityAttributes.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0A0ACCB2F628DC0009A449C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0A0ABE22F627317009A449C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0A0ACB82F628DBF009A449C;
+			remoteInfo = AudioCaptureWidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F0A0ACD22F628DC0009A449C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F0A0ACCD2F628DC0009A449C /* AudioCaptureWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F0A0ABEA2F627317009A449C /* AudioCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,13 +110,46 @@
 		F0A0AC952F628C42009A449C /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F0A0AC982F628D31009A449C /* RecordingActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingActivityAttributes.swift; sourceTree = "<group>"; };
 		F0A0AC992F628D31009A449C /* SharedDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDefaults.swift; sourceTree = "<group>"; };
+		F0A0ACB92F628DBF009A449C /* AudioCaptureWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AudioCaptureWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0A0ACBB2F628DBF009A449C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F0A0ACBD2F628DBF009A449C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		F0A0ACCE2F628DC0009A449C /* Exceptions for "AudioCaptureWidgets" folder in "AudioCaptureWidgetsExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F0A0ACB82F628DBF009A449C /* AudioCaptureWidgetsExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		F0A0ACBF2F628DBF009A449C /* AudioCaptureWidgets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F0A0ACCE2F628DC0009A449C /* Exceptions for "AudioCaptureWidgets" folder in "AudioCaptureWidgetsExtension" target */,
+			);
+			path = AudioCaptureWidgets;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F0A0ABE72F627317009A449C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0A0ACB62F628DBF009A449C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A0ACBE2F628DBF009A449C /* SwiftUI.framework in Frameworks */,
+				F0A0ACBC2F628DBF009A449C /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				F0A0AC362F627912009A449C /* AudioCapture */,
+				F0A0ACBF2F628DBF009A449C /* AudioCaptureWidgets */,
+				F0A0ACBA2F628DBF009A449C /* Frameworks */,
 				F0A0ABEB2F627317009A449C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -106,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				F0A0ABEA2F627317009A449C /* AudioCapture.app */,
+				F0A0ACB92F628DBF009A449C /* AudioCaptureWidgetsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +313,15 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		F0A0ACBA2F628DBF009A449C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0ACBB2F628DBF009A449C /* WidgetKit.framework */,
+				F0A0ACBD2F628DBF009A449C /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,10 +332,12 @@
 				F0A0ABE62F627317009A449C /* Sources */,
 				F0A0ABE72F627317009A449C /* Frameworks */,
 				F0A0ABE82F627317009A449C /* Resources */,
+				F0A0ACD22F628DC0009A449C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F0A0ACCC2F628DC0009A449C /* PBXTargetDependency */,
 			);
 			name = AudioCapture;
 			packageProductDependencies = (
@@ -269,6 +345,28 @@
 			productName = AudioCapture;
 			productReference = F0A0ABEA2F627317009A449C /* AudioCapture.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F0A0ACB82F628DBF009A449C /* AudioCaptureWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0A0ACCF2F628DC0009A449C /* Build configuration list for PBXNativeTarget "AudioCaptureWidgetsExtension" */;
+			buildPhases = (
+				F0A0ACB52F628DBF009A449C /* Sources */,
+				F0A0ACB62F628DBF009A449C /* Frameworks */,
+				F0A0ACB72F628DBF009A449C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F0A0ACBF2F628DBF009A449C /* AudioCaptureWidgets */,
+			);
+			name = AudioCaptureWidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = AudioCaptureWidgetsExtension;
+			productReference = F0A0ACB92F628DBF009A449C /* AudioCaptureWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -281,6 +379,9 @@
 				LastUpgradeCheck = 2630;
 				TargetAttributes = {
 					F0A0ABE92F627317009A449C = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					F0A0ACB82F628DBF009A449C = {
 						CreatedOnToolsVersion = 26.3;
 					};
 				};
@@ -300,6 +401,7 @@
 			projectRoot = "";
 			targets = (
 				F0A0ABE92F627317009A449C /* AudioCapture */,
+				F0A0ACB82F628DBF009A449C /* AudioCaptureWidgetsExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -310,6 +412,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A0AC3A2F627912009A449C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0A0ACB72F628DBF009A449C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +466,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0A0ACB52F628DBF009A449C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0A0ACD32F6291AE009A449C /* SharedDefaults.swift in Sources */,
+				F0A0ACD42F6291B2009A449C /* RecordingActivityAttributes.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0A0ACCC2F628DC0009A449C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0A0ACB82F628DBF009A449C /* AudioCaptureWidgetsExtension */;
+			targetProxy = F0A0ACCB2F628DC0009A449C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F0A0ABF52F62731A009A449C /* Debug */ = {
@@ -545,6 +671,66 @@
 			};
 			name = Release;
 		};
+		F0A0ACD02F628DC0009A449C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7G5J76FJ27;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AudioCaptureWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AudioCaptureWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talalzeini.AudioCapture.AudioCaptureWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0A0ACD12F628DC0009A449C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7G5J76FJ27;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AudioCaptureWidgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = AudioCaptureWidgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.talalzeini.AudioCapture.AudioCaptureWidgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -562,6 +748,15 @@
 			buildConfigurations = (
 				F0A0ABF82F62731A009A449C /* Debug */,
 				F0A0ABF92F62731A009A449C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0A0ACCF2F628DC0009A449C /* Build configuration list for PBXNativeTarget "AudioCaptureWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0A0ACD02F628DC0009A449C /* Debug */,
+				F0A0ACD12F628DC0009A449C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
