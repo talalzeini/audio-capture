@@ -51,7 +51,8 @@
 		F0A0ACDD2F629290009A449C /* StopRecordingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0ACDB2F629290009A449C /* StopRecordingIntent.swift */; };
 		F0A0ACDE2F629290009A449C /* StartRecordingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0ACDA2F629290009A449C /* StartRecordingIntent.swift */; };
 		F0A0ACE02F6292FC009A449C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0ACDF2F6292FC009A449C /* Item.swift */; };
-		F0A0ACE22F629312009A449C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0A0ACE12F629312009A449C /* Info.plist */; };
+		F0A0ACE32F6295D2009A449C /* StartRecordingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0ACDA2F629290009A449C /* StartRecordingIntent.swift */; };
+		F0A0ACE42F6295D5009A449C /* StopRecordingIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0ACDB2F629290009A449C /* StopRecordingIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,7 +123,7 @@
 		F0A0ACDA2F629290009A449C /* StartRecordingIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartRecordingIntent.swift; sourceTree = "<group>"; };
 		F0A0ACDB2F629290009A449C /* StopRecordingIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopRecordingIntent.swift; sourceTree = "<group>"; };
 		F0A0ACDF2F6292FC009A449C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		F0A0ACE12F629312009A449C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0A0ADDB2F62EFF0009A449C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -188,7 +189,7 @@
 		F0A0AC362F627912009A449C /* AudioCapture */ = {
 			isa = PBXGroup;
 			children = (
-				F0A0ACE12F629312009A449C /* Info.plist */,
+				F0A0ADDB2F62EFF0009A449C /* Info.plist */,
 				F0A0ACD82F629279009A449C /* AppIntents */,
 				F0A0ACD52F629220009A449C /* LiveActivity */,
 				F0A0AC972F628D2C009A449C /* Shared */,
@@ -442,7 +443,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0A0ACE22F629312009A449C /* Info.plist in Resources */,
 				F0A0AC3A2F627912009A449C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +507,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0A0ACD32F6291AE009A449C /* SharedDefaults.swift in Sources */,
+				F0A0ACE42F6295D5009A449C /* StopRecordingIntent.swift in Sources */,
+				F0A0ACE32F6295D2009A449C /* StartRecordingIntent.swift in Sources */,
 				F0A0ACD42F6291B2009A449C /* RecordingActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,6 +655,7 @@
 				DEVELOPMENT_TEAM = 7G5J76FJ27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AudioCapture/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "AudioCapture needs microphone access to record audio.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -687,6 +690,7 @@
 				DEVELOPMENT_TEAM = 7G5J76FJ27;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AudioCapture/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "AudioCapture needs microphone access to record audio.";
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
