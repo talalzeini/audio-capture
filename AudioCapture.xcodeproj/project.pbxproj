@@ -27,6 +27,7 @@
 		F0A0AC6D2F6283A0009A449C /* TranscriptionSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC6B2F6283A0009A449C /* TranscriptionSegment.swift */; };
 		F0A0AC6E2F6283A0009A449C /* WhisperTranscriptionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC6C2F6283A0009A449C /* WhisperTranscriptionAPI.swift */; };
 		F0A0AC6F2F6283A0009A449C /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC6A2F6283A0009A449C /* RetryPolicy.swift */; };
+		F0A0AC712F6283C2009A449C /* TranscriptionActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC702F6283C2009A449C /* TranscriptionActor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		F0A0AC6A2F6283A0009A449C /* RetryPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryPolicy.swift; sourceTree = "<group>"; };
 		F0A0AC6B2F6283A0009A449C /* TranscriptionSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionSegment.swift; sourceTree = "<group>"; };
 		F0A0AC6C2F6283A0009A449C /* WhisperTranscriptionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhisperTranscriptionAPI.swift; sourceTree = "<group>"; };
+		F0A0AC702F6283C2009A449C /* TranscriptionActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranscriptionActor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		F0A0AC672F628372009A449C /* Transcription */ = {
 			isa = PBXGroup;
 			children = (
+				F0A0AC702F6283C2009A449C /* TranscriptionActor.swift */,
 				F0A0AC6A2F6283A0009A449C /* RetryPolicy.swift */,
 				F0A0AC6B2F6283A0009A449C /* TranscriptionSegment.swift */,
 				F0A0AC6C2F6283A0009A449C /* WhisperTranscriptionAPI.swift */,
@@ -231,6 +234,7 @@
 				F0A0AC382F627912009A449C /* ContentView.swift in Sources */,
 				F0A0AC592F627EC9009A449C /* SegmentManagerActor.swift in Sources */,
 				F0A0AC5A2F627EC9009A449C /* SegmentedAudioFileWriter.swift in Sources */,
+				F0A0AC712F6283C2009A449C /* TranscriptionActor.swift in Sources */,
 				F0A0AC5D2F627F39009A449C /* KeychainManager.swift in Sources */,
 				F0A0AC6D2F6283A0009A449C /* TranscriptionSegment.swift in Sources */,
 				F0A0AC6E2F6283A0009A449C /* WhisperTranscriptionAPI.swift in Sources */,
