@@ -10,26 +10,42 @@ import SwiftData
 
 @main
 struct AudioCaptureApp: App {
-    let modelContainer: ModelContainer
+    private let coordinator: AppCoordinator
+    @Environment(\.scenePhase) private var scenePhase
 
     init() {
-        let schema = Schema([
-            RecordingSession.self,
-            Segment.self,
-            Transcription.self
-        ])
-        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-        do {
-            modelContainer = try ModelContainer(for: schema, configurations: [config])
-        } catch {
-            fatalError("Failed to create ModelContainer: \(error)")
-        }
+        let container = AppCoordinator.makeModelContainer()
+        coordinator = AppCoordinator(modelContainer: container)
     }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .modelContainer(modelContainer)
+                .environment(coordinator)
+                .modelContainer(coordinator.modelContainer)
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .active {
+                handlePendingIntents()
+            }
+        }
+    }
+
+    @MainActor
+    private func handlePendingIntents() {
+        let vm = coordinator.recordingViewModel
+
+        if SharedDefaults.pendingStartRecording {
+            let name = SharedDefaults.pendingSessionName
+            SharedDefaults.clearPendingIntents()
+            Task { @MainActor in
+                await vm.startRecording(sessionName: name)
+            }
+        } else if SharedDefaults.pendingStopRecording {
+            SharedDefaults.clearPendingIntents()
+            Task { @MainActor in
+                await vm.stopRecording()
+            }
         }
     }
 }
