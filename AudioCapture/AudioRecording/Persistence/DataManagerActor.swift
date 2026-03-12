@@ -124,7 +124,7 @@ actor DataManagerActor {
             descriptor = FetchDescriptor<Segment>(
                 predicate: #Predicate {
                     $0.session?.id == sessionID
-                    && $0.transcriptionStatus.rawValue == rawStatus
+                    && $0.transcriptionStatusRaw == rawStatus
                 },
                 sortBy: [SortDescriptor(\.startTime)]
             )
@@ -146,8 +146,8 @@ actor DataManagerActor {
 
         var descriptor = FetchDescriptor<Segment>(
             predicate: #Predicate {
-                $0.transcriptionStatus.rawValue == pendingRaw
-                || $0.transcriptionStatus.rawValue == failedRaw
+                $0.transcriptionStatusRaw == pendingRaw
+                || $0.transcriptionStatusRaw == failedRaw
             },
             sortBy: [SortDescriptor(\.startTime)]
         )

@@ -57,7 +57,22 @@ final class AppCoordinator {
         do {
             return try ModelContainer(for: schema, configurations: [config])
         } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+            // Migration failure (e.g. schema change on first launch after update).
+            // Delete the incompatible store files and recreate a clean container.
+            let storeURL = config.url
+            let fm = FileManager.default
+            // SQLite stores the WAL and SHM alongside the main file.
+            for suffix in ["", "-shm", "-wal"] {
+                let candidate = storeURL.deletingPathExtension()
+                    .appendingPathExtension("store\(suffix)")
+                try? fm.removeItem(at: candidate)
+            }
+            try? fm.removeItem(at: storeURL)
+            do {
+                return try ModelContainer(for: schema, configurations: [config])
+            } catch let secondError {
+                fatalError("Could not create ModelContainer even after resetting store: \(secondError)")
+            }
         }
     }
 }

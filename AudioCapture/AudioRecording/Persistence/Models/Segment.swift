@@ -17,8 +17,19 @@ final class Segment {
     var duration: TimeInterval
     var audioFileURLString: String
 
-    var transcriptionStatus: TranscriptionStatus
+    // Stored as a raw String so SwiftData's #Predicate macro can query it
+    // without resolving `.rawValue` at runtime (which causes a fatal crash).
+    // The `originalName` attribute tells SwiftData this column was previously
+    // called "transcriptionStatus", enabling lightweight migration.
+    @Attribute(originalName: "transcriptionStatus")
+    var transcriptionStatusRaw: String
+
     var transcriptionErrorDescription: String?
+
+    var transcriptionStatus: TranscriptionStatus {
+        get { TranscriptionStatus(rawValue: transcriptionStatusRaw) ?? .pending }
+        set { transcriptionStatusRaw = newValue.rawValue }
+    }
 
     var audioFileURL: URL {
         URL(fileURLWithPath: audioFileURLString)
@@ -40,6 +51,6 @@ final class Segment {
         self.startTime = startTime
         self.duration = duration
         self.audioFileURLString = audioFileURL.path
-        self.transcriptionStatus = transcriptionStatus
+        self.transcriptionStatusRaw = transcriptionStatus.rawValue
     }
 }
