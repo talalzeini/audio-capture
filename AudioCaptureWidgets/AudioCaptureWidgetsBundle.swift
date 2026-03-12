@@ -12,5 +12,6 @@ import SwiftUI
 struct AudioCaptureWidgetsBundle: WidgetBundle {
     var body: some Widget {
         RecordingWidget()
+        AudioCaptureWidgetsLiveActivity()
     }
 }

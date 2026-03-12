@@ -47,6 +47,7 @@
 		F0A0ACCD2F628DC0009A449C /* AudioCaptureWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F0A0ACB92F628DBF009A449C /* AudioCaptureWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F0A0ACD32F6291AE009A449C /* SharedDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC992F628D31009A449C /* SharedDefaults.swift */; };
 		F0A0ACD42F6291B2009A449C /* RecordingActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC982F628D31009A449C /* RecordingActivityAttributes.swift */; };
+		F0A0ACD72F629223009A449C /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0ACD62F629223009A449C /* LiveActivityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		F0A0ACB92F628DBF009A449C /* AudioCaptureWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AudioCaptureWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A0ACBB2F628DBF009A449C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		F0A0ACBD2F628DBF009A449C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F0A0ACD62F629223009A449C /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -178,6 +180,7 @@
 		F0A0AC362F627912009A449C /* AudioCapture */ = {
 			isa = PBXGroup;
 			children = (
+				F0A0ACD52F629220009A449C /* LiveActivity */,
 				F0A0AC972F628D2C009A449C /* Shared */,
 				F0A0AC7E2F6289DB009A449C /* UI */,
 				F0A0AC3B2F627914009A449C /* AudioRecording */,
@@ -322,6 +325,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F0A0ACD52F629220009A449C /* LiveActivity */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0ACD62F629223009A449C /* LiveActivityManager.swift */,
+			);
+			path = LiveActivity;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,6 +473,7 @@
 				F0A0AC452F62794F009A449C /* PersistenceTypes.swift in Sources */,
 				F0A0AC662F62829B009A449C /* DataManagerActor.swift in Sources */,
 				F0A0AC9A2F628D31009A449C /* SharedDefaults.swift in Sources */,
+				F0A0ACD72F629223009A449C /* LiveActivityManager.swift in Sources */,
 				F0A0AC9B2F628D31009A449C /* RecordingActivityAttributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,72 +9,113 @@ import ActivityKit
 import WidgetKit
 import SwiftUI
 
-struct AudioCaptureWidgetsAttributes: ActivityAttributes {
-    public struct ContentState: Codable, Hashable {
-        // Dynamic stateful properties about your activity go here!
-        var emoji: String
-    }
-
-    // Fixed non-changing properties about your activity go here!
-    var name: String
-}
-
 struct AudioCaptureWidgetsLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: AudioCaptureWidgetsAttributes.self) { context in
-            // Lock screen/banner UI goes here
-            VStack {
-                Text("Hello \(context.state.emoji)")
-            }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
-
+        ActivityConfiguration(for: RecordingActivityAttributes.self) { context in
+            lockScreenView(context: context)
+                .activityBackgroundTint(Color.black.opacity(0.8))
+                .activitySystemActionForegroundColor(.white)
         } dynamicIsland: { context in
             DynamicIsland {
-                // Expanded UI goes here.  Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    HStack(spacing: 6) {
+                        Image(systemName: context.state.state == .recording ? "mic.fill" : "mic.slash.fill")
+                            .foregroundStyle(context.state.state == .recording ? .red : .orange)
+                        Text(context.state.sessionName)
+                            .font(.caption)
+                            .lineLimit(1)
+                    }
+                    .padding(.leading, 4)
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    Text(timerInterval: Date()...(Date().addingTimeInterval(Double(context.state.elapsedSeconds))), countsDown: false)
+                        .font(.caption.monospacedDigit())
+                        .padding(.trailing, 4)
+                }
+                DynamicIslandExpandedRegion(.center) {
+                    Text(context.state.state == .recording ? "Recording" : context.state.state == .paused ? "Paused" : "Stopped")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
-                    // more content
+                    HStack {
+                        Text("\(context.state.transcribedSegments)/\(context.state.totalSegments) segments transcribed")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        AudioLevelBar(level: context.state.audioLevel)
+                            .frame(width: 60, height: 8)
+                    }
+                    .padding(.horizontal, 4)
                 }
             } compactLeading: {
-                Text("L")
+                Image(systemName: "mic.fill")
+                    .foregroundStyle(.red)
+                    .font(.caption)
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+                Text(timerInterval: Date()...(Date().addingTimeInterval(Double(context.state.elapsedSeconds))), countsDown: false)
+                    .font(.caption2.monospacedDigit())
+                    .frame(width: 40)
             } minimal: {
-                Text(context.state.emoji)
+                Image(systemName: "mic.fill")
+                    .foregroundStyle(.red)
+                    .font(.caption2)
             }
-            .widgetURL(URL(string: "http://www.apple.com"))
-            .keylineTint(Color.red)
+            .widgetURL(URL(string: "audiocapture://recording"))
+            .keylineTint(.red)
         }
     }
-}
 
-extension AudioCaptureWidgetsAttributes {
-    fileprivate static var preview: AudioCaptureWidgetsAttributes {
-        AudioCaptureWidgetsAttributes(name: "World")
+    @ViewBuilder
+    private func lockScreenView(context: ActivityViewContext<RecordingActivityAttributes>) -> some View {
+        HStack(spacing: 12) {
+            Image(systemName: context.state.state == .recording ? "mic.fill" : "mic.slash.fill")
+                .font(.title2)
+                .foregroundStyle(context.state.state == .recording ? .red : .orange)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(context.state.sessionName)
+                    .font(.subheadline.bold())
+                    .foregroundStyle(.white)
+                    .lineLimit(1)
+                HStack(spacing: 8) {
+                    Text(context.state.state == .recording ? "Recording" : context.state.state == .paused ? "Paused" : "Stopped")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    Text("·")
+                        .foregroundStyle(.secondary)
+                    Text("\(context.state.transcribedSegments)/\(context.state.totalSegments) transcribed")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+
+            Spacer()
+
+            VStack(alignment: .trailing, spacing: 2) {
+                Text(timerInterval: Date()...(Date().addingTimeInterval(Double(context.state.elapsedSeconds))), countsDown: false)
+                    .font(.title3.monospacedDigit())
+                    .foregroundStyle(.white)
+                AudioLevelBar(level: context.state.audioLevel)
+                    .frame(width: 50, height: 6)
+            }
+        }
+        .padding()
     }
 }
 
-extension AudioCaptureWidgetsAttributes.ContentState {
-    fileprivate static var smiley: AudioCaptureWidgetsAttributes.ContentState {
-        AudioCaptureWidgetsAttributes.ContentState(emoji: "😀")
-     }
-     
-     fileprivate static var starEyes: AudioCaptureWidgetsAttributes.ContentState {
-         AudioCaptureWidgetsAttributes.ContentState(emoji: "🤩")
-     }
-}
+private struct AudioLevelBar: View {
+    let level: Float
 
-#Preview("Notification", as: .content, using: AudioCaptureWidgetsAttributes.preview) {
-   AudioCaptureWidgetsLiveActivity()
-} contentStates: {
-    AudioCaptureWidgetsAttributes.ContentState.smiley
-    AudioCaptureWidgetsAttributes.ContentState.starEyes
+    var body: some View {
+        GeometryReader { geo in
+            ZStack(alignment: .leading) {
+                Capsule()
+                    .fill(Color.white.opacity(0.2))
+                Capsule()
+                    .fill(Color.red)
+                    .frame(width: geo.size.width * CGFloat(min(max(level, 0), 1)))
+            }
+        }
+    }
 }
