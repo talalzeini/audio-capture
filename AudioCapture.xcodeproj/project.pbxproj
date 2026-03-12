@@ -6,17 +6,28 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		F0A0AC372F627912009A449C /* AudioCaptureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC332F627912009A449C /* AudioCaptureApp.swift */; };
+		F0A0AC382F627912009A449C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC342F627912009A449C /* ContentView.swift */; };
+		F0A0AC392F627912009A449C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC352F627912009A449C /* Item.swift */; };
+		F0A0AC3A2F627912009A449C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0A0AC322F627912009A449C /* Assets.xcassets */; };
+		F0A0AC412F62792A009A449C /* RecordingSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC3E2F62792A009A449C /* RecordingSession.swift */; };
+		F0A0AC422F62792A009A449C /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC3F2F62792A009A449C /* Segment.swift */; };
+		F0A0AC432F62792A009A449C /* Transcription.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC402F62792A009A449C /* Transcription.swift */; };
+		F0A0AC452F62794F009A449C /* PersistenceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC442F62794F009A449C /* PersistenceTypes.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		F0A0ABEA2F627317009A449C /* AudioCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0A0AC322F627912009A449C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0A0AC332F627912009A449C /* AudioCaptureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCaptureApp.swift; sourceTree = "<group>"; };
+		F0A0AC342F627912009A449C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F0A0AC352F627912009A449C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F0A0AC3E2F62792A009A449C /* RecordingSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingSession.swift; sourceTree = "<group>"; };
+		F0A0AC3F2F62792A009A449C /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		F0A0AC402F62792A009A449C /* Transcription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcription.swift; sourceTree = "<group>"; };
+		F0A0AC442F62794F009A449C /* PersistenceTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceTypes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		F0A0ABEC2F627317009A449C /* AudioCapture */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = AudioCapture;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F0A0ABE72F627317009A449C /* Frameworks */ = {
@@ -32,7 +43,7 @@
 		F0A0ABE12F627317009A449C = {
 			isa = PBXGroup;
 			children = (
-				F0A0ABEC2F627317009A449C /* AudioCapture */,
+				F0A0AC362F627912009A449C /* AudioCapture */,
 				F0A0ABEB2F627317009A449C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +54,45 @@
 				F0A0ABEA2F627317009A449C /* AudioCapture.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F0A0AC362F627912009A449C /* AudioCapture */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0AC3B2F627914009A449C /* AudioRecording */,
+				F0A0AC322F627912009A449C /* Assets.xcassets */,
+				F0A0AC332F627912009A449C /* AudioCaptureApp.swift */,
+				F0A0AC342F627912009A449C /* ContentView.swift */,
+				F0A0AC352F627912009A449C /* Item.swift */,
+			);
+			path = AudioCapture;
+			sourceTree = "<group>";
+		};
+		F0A0AC3B2F627914009A449C /* AudioRecording */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0AC3C2F62791B009A449C /* Persistence */,
+			);
+			path = AudioRecording;
+			sourceTree = "<group>";
+		};
+		F0A0AC3C2F62791B009A449C /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0AC3D2F627926009A449C /* Models */,
+				F0A0AC442F62794F009A449C /* PersistenceTypes.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		F0A0AC3D2F627926009A449C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0AC3E2F62792A009A449C /* RecordingSession.swift */,
+				F0A0AC3F2F62792A009A449C /* Segment.swift */,
+				F0A0AC402F62792A009A449C /* Transcription.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +109,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				F0A0ABEC2F627317009A449C /* AudioCapture */,
 			);
 			name = AudioCapture;
 			packageProductDependencies = (
@@ -109,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A0AC3A2F627912009A449C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +167,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A0AC372F627912009A449C /* AudioCaptureApp.swift in Sources */,
+				F0A0AC382F627912009A449C /* ContentView.swift in Sources */,
+				F0A0AC392F627912009A449C /* Item.swift in Sources */,
+				F0A0AC412F62792A009A449C /* RecordingSession.swift in Sources */,
+				F0A0AC422F62792A009A449C /* Segment.swift in Sources */,
+				F0A0AC432F62792A009A449C /* Transcription.swift in Sources */,
+				F0A0AC452F62794F009A449C /* PersistenceTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
