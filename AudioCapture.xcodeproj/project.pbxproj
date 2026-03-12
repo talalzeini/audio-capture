@@ -36,6 +36,7 @@
 		F0A0AC852F6289E8009A449C /* AudioLevelMeterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC802F6289E8009A449C /* AudioLevelMeterView.swift */; };
 		F0A0AC8B2F628A97009A449C /* SessionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC892F628A97009A449C /* SessionDetailView.swift */; };
 		F0A0AC8C2F628A97009A449C /* SessionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC8A2F628A97009A449C /* SessionsListView.swift */; };
+		F0A0AC8F2F628BF7009A449C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC8E2F628BF7009A449C /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		F0A0AC822F6289E8009A449C /* RecordingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewModel.swift; sourceTree = "<group>"; };
 		F0A0AC892F628A97009A449C /* SessionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailView.swift; sourceTree = "<group>"; };
 		F0A0AC8A2F628A97009A449C /* SessionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsListView.swift; sourceTree = "<group>"; };
+		F0A0AC8E2F628BF7009A449C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		F0A0AC7E2F6289DB009A449C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F0A0AC8D2F628BEF009A449C /* Settings */,
 				F0A0AC882F628A8D009A449C /* Sessions */,
 				F0A0AC7F2F6289E3009A449C /* Recording */,
 			);
@@ -204,6 +207,14 @@
 				F0A0AC8A2F628A97009A449C /* SessionsListView.swift */,
 			);
 			path = Sessions;
+			sourceTree = "<group>";
+		};
+		F0A0AC8D2F628BEF009A449C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0AC8E2F628BF7009A449C /* SettingsView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +307,7 @@
 				F0A0AC392F627912009A449C /* Item.swift in Sources */,
 				F0A0AC412F62792A009A449C /* RecordingSession.swift in Sources */,
 				F0A0AC4F2F6279BC009A449C /* RecordingState.swift in Sources */,
+				F0A0AC8F2F628BF7009A449C /* SettingsView.swift in Sources */,
 				F0A0AC502F6279BC009A449C /* AudioCaptureError.swift in Sources */,
 				F0A0AC542F627D20009A449C /* AudioFileWriter.swift in Sources */,
 				F0A0AC552F627D20009A449C /* AudioRecorderActor.swift in Sources */,
