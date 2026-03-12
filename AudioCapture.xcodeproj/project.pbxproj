@@ -22,6 +22,7 @@
 		F0A0AC552F627D20009A449C /* AudioRecorderActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC532F627D20009A449C /* AudioRecorderActor.swift */; };
 		F0A0AC592F627EC9009A449C /* SegmentManagerActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC582F627EC9009A449C /* SegmentManagerActor.swift */; };
 		F0A0AC5A2F627EC9009A449C /* SegmentedAudioFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC572F627EC9009A449C /* SegmentedAudioFileWriter.swift */; };
+		F0A0AC5D2F627F39009A449C /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC5C2F627F39009A449C /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		F0A0AC532F627D20009A449C /* AudioRecorderActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderActor.swift; sourceTree = "<group>"; };
 		F0A0AC572F627EC9009A449C /* SegmentedAudioFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedAudioFileWriter.swift; sourceTree = "<group>"; };
 		F0A0AC582F627EC9009A449C /* SegmentManagerActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentManagerActor.swift; sourceTree = "<group>"; };
+		F0A0AC5C2F627F39009A449C /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		F0A0AC3B2F627914009A449C /* AudioRecording */ = {
 			isa = PBXGroup;
 			children = (
+				F0A0AC5B2F627F29009A449C /* Security */,
 				F0A0AC562F627DA6009A449C /* Segmentation */,
 				F0A0AC3C2F62791B009A449C /* Persistence */,
 				F0A0AC4C2F6279BC009A449C /* AudioCaptureError.swift */,
@@ -122,6 +125,14 @@
 				F0A0AC582F627EC9009A449C /* SegmentManagerActor.swift */,
 			);
 			path = Segmentation;
+			sourceTree = "<group>";
+		};
+		F0A0AC5B2F627F29009A449C /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				F0A0AC5C2F627F39009A449C /* KeychainManager.swift */,
+			);
+			path = Security;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				F0A0AC382F627912009A449C /* ContentView.swift in Sources */,
 				F0A0AC592F627EC9009A449C /* SegmentManagerActor.swift in Sources */,
 				F0A0AC5A2F627EC9009A449C /* SegmentedAudioFileWriter.swift in Sources */,
+				F0A0AC5D2F627F39009A449C /* KeychainManager.swift in Sources */,
 				F0A0AC392F627912009A449C /* Item.swift in Sources */,
 				F0A0AC412F62792A009A449C /* RecordingSession.swift in Sources */,
 				F0A0AC4F2F6279BC009A449C /* RecordingState.swift in Sources */,
