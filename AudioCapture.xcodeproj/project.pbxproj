@@ -23,6 +23,7 @@
 		F0A0AC592F627EC9009A449C /* SegmentManagerActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC582F627EC9009A449C /* SegmentManagerActor.swift */; };
 		F0A0AC5A2F627EC9009A449C /* SegmentedAudioFileWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC572F627EC9009A449C /* SegmentedAudioFileWriter.swift */; };
 		F0A0AC5D2F627F39009A449C /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC5C2F627F39009A449C /* KeychainManager.swift */; };
+		F0A0AC662F62829B009A449C /* DataManagerActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A0AC652F62829B009A449C /* DataManagerActor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		F0A0AC572F627EC9009A449C /* SegmentedAudioFileWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedAudioFileWriter.swift; sourceTree = "<group>"; };
 		F0A0AC582F627EC9009A449C /* SegmentManagerActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentManagerActor.swift; sourceTree = "<group>"; };
 		F0A0AC5C2F627F39009A449C /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		F0A0AC652F62829B009A449C /* DataManagerActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerActor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				F0A0AC3D2F627926009A449C /* Models */,
 				F0A0AC442F62794F009A449C /* PersistenceTypes.swift */,
+				F0A0AC652F62829B009A449C /* DataManagerActor.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				F0A0AC422F62792A009A449C /* Segment.swift in Sources */,
 				F0A0AC432F62792A009A449C /* Transcription.swift in Sources */,
 				F0A0AC452F62794F009A449C /* PersistenceTypes.swift in Sources */,
+				F0A0AC662F62829B009A449C /* DataManagerActor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
